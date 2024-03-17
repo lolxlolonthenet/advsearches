@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<center><big><body bgcolor="ffffe">
+      <title>Advanced Search</title>	  
+    <style>
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: px;
+      }
+            input[type="text"],
+      input[type="number"],
+      select {
+        padding: 5px;
+        border: 2px solid #ddd;
+        border-radius: 15px;
+        margin-bottom: 5px;
+      }
+            input[type="submit"] {
+        background-color: darkred;
+        color: white;
+        padding: 23px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      /* Style the refresh button */
+button.refresh {
+    background-color: darkred; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add some padding */
+    text-align: center; /* Center text */
+    text-decoration: yes; /* Remove underline */
+    display: inline-block; /* Make it a block element */
+    font-size: 16px; /* Set font size */
+    margin: 10px; /* Add some margin */
+    cursor: pointer; /* Add pointer cursor on hover */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow */
+}
+/* Style the form submit button */
+input[type="submit"] {
+    background-color: darkred; /* Blue background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add some padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it a block element */
+    font-size: 16px; /* Set font size */
+    margin: 10px; /* Add some margin */
+    cursor: pointer; /* Add pointer cursor on hover */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow */
+}
+
+/* Style the form submit button on hover */
+input[type="submit"]:hover,
+button.refresh:hover {
+    background-color: #3367D6; /* Blue background */
+}
+		}
+    </style> 
+<script>
+  function onSubmit() {
+    var query = document.getElementById('query').value;
+    var exclude = document.getElementById('exclude').value.trim();
+    var filetype = document.getElementById('filetype').value.trim();
+    var intitle = document.getElementById('intitle').value.trim();
+    var inurl = document.getElementById('inurl').value.trim();
+    var indexingmethod = document.getElementById('indexingmethod').value.trim();
+    var intext = document.getElementById('intext').value.trim();
+    var allintext = document.getElementById('allintext').value.trim();
+    var startYear = document.getElementById('startYear').value;
+    var endYear = document.getElementById('endYear').value;
+var operators = [];
+var siteCheckboxes = document.getElementsByName('site-checkbox');
+    var selectedSites = [];
+    for (var i = 0; i < siteCheckboxes.length; i++) {
+      if (siteCheckboxes[i].checked) {
+        selectedSites.push(siteCheckboxes[i].value);
+      }
+    }
+	var siteCheckboxes = document.getElementsByName('site-checkbox');
+    var selectedSites = [];
+    for (var i = 0; i < siteCheckboxes.length; i++) {
+      if (siteCheckboxes[i].checked) {
+        selectedSites.push(siteCheckboxes[i].value);
+      }
+    }
+    if (selectedSites.length > 0) {
+      operators.push('site:' + selectedSites.join(' OR site:'));
+    }
+    if (exclude) {
+      operators.push('-' + exclude);
+    }
+
+    if (filetype) {
+      operators.push('filetype:' + filetype);
+    }
+    if (intitle) {
+      operators.push('intitle:' + intitle);
+    }
+    if (allintext) {
+      operators.push('allintext:' + allintext);
+    }
+    if (inurl) {
+      operators.push('inurl:' + inurl);
+    }
+    if (indexingmethod) {
+      operators.push(''+ indexingmethod);
+    }
+    if (intext) {
+      operators.push('intext:' + intext);
+    }
+    if (startYear) {
+      operators.push('after:' + startYear);
+    }
+    if (endYear) {
+      operators.push('before:' + endYear);
+    }
+    var queryWithOperators = query;
+    if (operators.length > 0) {
+      queryWithOperators += ' ' + operators.join(' ');
+    }
+    window.open('https://www.google.com/search?q=' + encodeURIComponent(queryWithOperators), '_blank');
+  }
+</script>
+<body bgcolor="#FDFEFE"> 
+  <font color="#2471A3">
+    <header>
+      <h1><font color="darkred">Surf the Internet</font></h1>
+    </header>
+ <label><marquee><font color="blue">This is an instance of a professional Google Search</font></marquee></label>
+	<script>
+		// Function to submit form data
+		function submitForm() {
+			// Code to submit form data goes here
+			alert("Form submitted!");
+		}
+
+		// Function to clear form data
+		function clearForm() {
+			document.getElementById("site-checkbox").value = "";
+			document.getElementById("email").value = "";
+		}
+	</script>
+<br>
+<b><big><big>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>News Websites</h1>
+    </header>
+    <div class="container">
+       
+        <ul>
+            <li>
+                <label>
+                  
+               <div class="container">
+        <ul>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*adweek.com/"> Adweek
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.ambito.com/"> Ámbito
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.americanbanker.com/"> American Banker
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.baltimoresun.com/"> Baltimore Sun
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.barrons.com/"> Barron's
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.bloomberg.com/"> Bloomberg
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.bloombergquint.com/"> Bloomberg Quint (free articles only)
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.bostonglobe.com/"> Boston Globe
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.brisbanetimes.com.au/"> Brisbane Times
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.businessinsider.com/"> Business Insider
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.caixinglobal.com/"> Caixin
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.centralwesterndaily.com.au/"> Central Western Daily
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="cen.acs.org/"> Chemical & Engineering News
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.chicagotribune.com/"> Chicago Tribune
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.corriere.it/"> Corriere Della Sera
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.chicagobusiness.com/"> Crain's Chicago Business
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.dailypress.com/"> Daily Press
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.groene.nl/"> De Groene Amsterdammer
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.demorgen.be/"> DeMorgen
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.denverpost.com/"> Denver Post
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="speld.nl/"> De Speld
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.tijd.be/"> De Tijd
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.volkskrant.nl/"> de Volkskrant
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.df.cl/"> Diario Financiero
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.domani.it/"> Domani
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.dynamed.com/"> Dynamed Plus
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.elmercurio.com/"> El Mercurio
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.elmundo.es/"> El Mundo
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="elpais.com/"> El Pais
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.elperiodico.com/"> El Periodico
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="elu24.postimees.ee/"> Elu24
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.britannica.com/"> Encyclopedia Britannica
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.estadao.com.br/"> Estadão
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.washingtonexaminer.com/"> Examiner
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.expansion.com/"> Expansión
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.fnlondon.com/"> Financial News
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.financialpost.com/"> Financial Post
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.ft.com/"> Financial Times
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.firstthings.com/"> First Things
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.foreignpolicy.com/"> Foreign Policy
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.fortune.com/"> Fortune
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.genomeweb.com/"> Genomeweb
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.glassdoor.com/"> Glassdoor
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.globes.co.il/"> Globes
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.grubstreet.com/"> Grubstreet
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.haaretz.com/english/"> Haaretz English
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.haaretz.co.il/"> Haaretz
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="harpers.org/"> Harper's Magazine
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.courant.com/"> Hartford Courant
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="hbr.org/"> Harvard Business Review
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="hbrchina.cn/"> Harvard Business Review China
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.heraldsun.com.au/"> Herald Sun
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="fd.nl/"> Het Financieele Dagblad
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.historyextra.com/"> History Extra
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.humo.be/"> Humo
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="ilmanifesto.it/"> Il Manifesto
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.ilmessaggero.it/"> Il Messaggero
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.inc.com/"> Inc.com
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="interest.co.nz/"> Interest NZ
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.investorschronicle.co.uk/"> Investors Chronicle
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.lanacion.com.ar/"> La Nacion
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.repubblica.it/"> La Repubblica
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.lastampa.it/"> La Stampa
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.latercera.com/"> La Tercera
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.lavoixdunord.fr/"> La Voix du Nord
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.lecho.be/"> L'Echo
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.ledevoir.com/"> Le Devoir
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.leparisien.com/"> Le Parisien
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.lesechos.fr/"> Les Echos
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.loebclassics.com/"> Loeb Classical Library
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.lrb.co.uk/"> London Review of Books
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="labusinessjournal.com/"> Los Angeles Business Journal
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.latimes.com/"> Los Angeles Times
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="medium.com/"> Medium
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.medscape.com/"> Medscape
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="mexiconewsdaily.com/"> Mexico News Daily
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="sloanreview.mit.edu/"> MIT Sloan Management Review
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.technologyreview.com/"> MIT Technology Review
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="mv-voice.com/"> Mountain View Voice
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="nationalgeographic.com/"> National Geographic
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="nationalpost.com/"> National Post
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="nzz.ch/"> Neue Zürcher Zeitung
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.newstatesman.com/"> New Statesman
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="nzherald.co.nz/"> New Zealand Herald
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="nrc.nl/"> NRC
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="ntnews.com.au/"> NT News
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="ocregister.com/"> Orange County Register
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="orlandosentinel.com/"> Orlando Sentinel
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="paloaltoonline.com/"> Palo Alto Online
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="parool.nl/"> Parool
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="postimees.ee/"> Postimees
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.prensalibre.com/"> Prensa Libre
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="prospectmagazine.co.uk/"> Prospect Magazine
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="providencejournal.com/"> Providence Journal
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.quora.com/"> Quora
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="*.quartz.com/"> Quartz
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="qz.com/"> Quartz (qz.com)
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="qzprodquintqf7d8mnq.wpengine.netdna-cdn.com/"> Quartz (qz.com) (qzprodquintqf7d8mnq.wpengine.netdna-cdn.com)
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="raju.com/"> Raju
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="rawstory.com/"> Raw Story
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="readersupportednews.org/"> Reader Supported News
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="realclearpolitics.com/"> Real Clear Politics
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="reason.com/"> Reason
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="site-checkbox" value="richmond.com/"> Richmond Times-Dispatch
+                </label>
+            </li>
+            <li>
+                 </li>
+        </ul>
+    </div>
+
+
+
+<form onsubmit="event.preventDefault(); onSubmit();">
+      <label for="query">Search query:</label>
+      <input type="text" id="query" name="query" required>
+      <label for="exclude">Exclude terms:</label>
+      <input type="text" id="exclude" name="exclude">
+      <label for="filetype">File type:</label>
+      <select id="filetype" name="filetype">
+        <option value="">Any</option>
+		<option value="(pdf|docx|doc|epub|txt)">Book Format</option>
+        <option value="pdf">PDF</option>
+		<option value="(pdf)">(PDF)</option>
+        <option value="epub">Epub</option>
+        <option value="rtf">RTF</option>
+        <option value="txt">Text</option>
+        <option value="doc">Word(Doc)</option>
+        <option value="docx">Docx</option>
+        <option value="tex">La Tex</option>
+        <option value="xls">Excel</option>
+        <option value="xlsx">xlsx</option>
+        <option value="ppt">PowerPoint</option>
+        <option value="pptx">PPTX</option>
+        <option value="gpx">GPS Data</option>
+      </select>
+      <label for="intitle">Search in title:</label>
+      <input type="text" id="intitle" name="intitle">
+      <label for="inurl">Search in URL:</label>
+      <input type="text" id="inurl" name="inurl">
+      <label for="indexingmethod">Indexing:</label>
+      <select id="indexingmethod" name="indexingmethod">
+        <option value=""> Any </option>
+		<option value="inurl:index.of intitle:index.of">intitle & URL INDEX</option>
+		<option value="-inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)">-intitle(all), index.of</option>
+		<option value="-inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of">-intitle(partial), index.of</option>
+        <option value="-inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) inurl:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)">-inurl(all), index.of</option>
+        <option value="-inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) inurl:index.of">-inurl, index.of</option>
+        <option value="-inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)">-inurl</option>
+		<option value="+(.MOBI|.CBZ|.CBR|.CBC|.CHM|.EPUB|.FB2|.LIT|.LRF|.ODT|.PDF|.PRC|.PDB|.PML|.RB|.RTF|.TCR|.DOC|.DOCX) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)">FileChef Method</option>
+		<option value="+(.MOBI|.EPUB|.PDF|.RTF|.TXT|.DOC|.DOCX) -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)">Specific formats for Books</option>
+		</select>
+      <label for="intext">Search in body text:</label>
+      <input type="text" id="intext" name="intext">
+      <label for="allintext">Search for all terms:</label>
+      <input type="text" id="allintext" name="allintext">
+      <label for="startYear">Published after year:</label>
+      <input type="number" id="startYear" name="startYear" min="1900" max="2100">
+      <label for="endYear">Published before year:</label>
+      <input type="number" id="endYear" name="endYear" min="1900" max="2100">
+      <br>
+	
+	 <input type="submit" value="Click here to Search">
+	 <button class="refresh the Page" onclick="location.reload()">Refresh</button><br>
+	<br>
+    </form>
+  </font>
+ </body>
+ </html>
