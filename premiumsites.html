@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,7 +49,7 @@ input[type="submit"] {
     color: white; /* White text */
     padding: 10px 20px; /* Add some padding */
     text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
+    text-decoration: yes; /* Remove underline */
     display: inline-block; /* Make it a block element */
     font-size: 16px; /* Set font size */
     margin: 10px; /* Add some margin */
@@ -198,541 +199,223 @@ var siteCheckboxes = document.getElementsByName('site-checkbox');
 </head>
 <body>
     <header>
-        <h1>News Websites</h1>
+        
     </header>
-    <div class="container">
+
+<!-- ... Your existing HTML code ... -->
+
+<div class="container">
+    <h2>Select News Websites:</h2>
+    <ul>
+        <!-- Your list of checkboxes goes here -->
+    </ul>
+
+    <!-- "Select All" checkbox code -->
+    <label>
+        <input type="checkbox" id="select-all"> Select All
+    </label>
+
+    <script>
+        // Get the "Select All" checkbox element
+        const selectAllCheckbox = document.getElementById("select-all");
+
+        // Get all the checkboxes that you want to select
+        const siteCheckboxes = document.querySelectorAll('input[name="site-checkbox"]');
+
+        // Add an event listener to the "Select All" checkbox
+        selectAllCheckbox.addEventListener("change", function () {
+            // Set the state of all site checkboxes to match the "Select All" checkbox
+            siteCheckboxes.forEach(function (checkbox) {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        });
+    </script>
+</div>
+
+<!-- ... Rest of your HTML code ... -->
+
+
+
+   
+       <div class="container">
        
         <ul>
             <li>
-                <label>
-                  
-               <div class="container">
-        <ul>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*adweek.com/"> Adweek
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.ambito.com/"> Ámbito
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.americanbanker.com/"> American Banker
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.baltimoresun.com/"> Baltimore Sun
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.barrons.com/"> Barron's
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.bloomberg.com/"> Bloomberg
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.bloombergquint.com/"> Bloomberg Quint (free articles only)
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.bostonglobe.com/"> Boston Globe
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.brisbanetimes.com.au/"> Brisbane Times
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.businessinsider.com/"> Business Insider
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.caixinglobal.com/"> Caixin
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.centralwesterndaily.com.au/"> Central Western Daily
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="cen.acs.org/"> Chemical & Engineering News
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.chicagotribune.com/"> Chicago Tribune
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.corriere.it/"> Corriere Della Sera
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.chicagobusiness.com/"> Crain's Chicago Business
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.dailypress.com/"> Daily Press
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.groene.nl/"> De Groene Amsterdammer
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.demorgen.be/"> DeMorgen
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.denverpost.com/"> Denver Post
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="speld.nl/"> De Speld
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.tijd.be/"> De Tijd
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.volkskrant.nl/"> de Volkskrant
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.df.cl/"> Diario Financiero
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.domani.it/"> Domani
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.dynamed.com/"> Dynamed Plus
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.elmercurio.com/"> El Mercurio
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.elmundo.es/"> El Mundo
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="elpais.com/"> El Pais
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.elperiodico.com/"> El Periodico
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="elu24.postimees.ee/"> Elu24
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.britannica.com/"> Encyclopedia Britannica
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.estadao.com.br/"> Estadão
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.washingtonexaminer.com/"> Examiner
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.expansion.com/"> Expansión
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.fnlondon.com/"> Financial News
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.financialpost.com/"> Financial Post
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.ft.com/"> Financial Times
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.firstthings.com/"> First Things
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.foreignpolicy.com/"> Foreign Policy
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.fortune.com/"> Fortune
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.genomeweb.com/"> Genomeweb
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.glassdoor.com/"> Glassdoor
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.globes.co.il/"> Globes
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.grubstreet.com/"> Grubstreet
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.haaretz.com/english/"> Haaretz English
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.haaretz.co.il/"> Haaretz
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="harpers.org/"> Harper's Magazine
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.courant.com/"> Hartford Courant
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="hbr.org/"> Harvard Business Review
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="hbrchina.cn/"> Harvard Business Review China
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.heraldsun.com.au/"> Herald Sun
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="fd.nl/"> Het Financieele Dagblad
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.historyextra.com/"> History Extra
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.humo.be/"> Humo
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="ilmanifesto.it/"> Il Manifesto
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.ilmessaggero.it/"> Il Messaggero
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.inc.com/"> Inc.com
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="interest.co.nz/"> Interest NZ
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.investorschronicle.co.uk/"> Investors Chronicle
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.lanacion.com.ar/"> La Nacion
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.repubblica.it/"> La Repubblica
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.lastampa.it/"> La Stampa
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.latercera.com/"> La Tercera
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.lavoixdunord.fr/"> La Voix du Nord
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.lecho.be/"> L'Echo
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.ledevoir.com/"> Le Devoir
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.leparisien.com/"> Le Parisien
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.lesechos.fr/"> Les Echos
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.loebclassics.com/"> Loeb Classical Library
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.lrb.co.uk/"> London Review of Books
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="labusinessjournal.com/"> Los Angeles Business Journal
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.latimes.com/"> Los Angeles Times
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="medium.com/"> Medium
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.medscape.com/"> Medscape
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="mexiconewsdaily.com/"> Mexico News Daily
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="sloanreview.mit.edu/"> MIT Sloan Management Review
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.technologyreview.com/"> MIT Technology Review
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="mv-voice.com/"> Mountain View Voice
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="nationalgeographic.com/"> National Geographic
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="nationalpost.com/"> National Post
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="nzz.ch/"> Neue Zürcher Zeitung
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.newstatesman.com/"> New Statesman
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="nzherald.co.nz/"> New Zealand Herald
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="nrc.nl/"> NRC
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="ntnews.com.au/"> NT News
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="ocregister.com/"> Orange County Register
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="orlandosentinel.com/"> Orlando Sentinel
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="paloaltoonline.com/"> Palo Alto Online
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="parool.nl/"> Parool
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="postimees.ee/"> Postimees
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.prensalibre.com/"> Prensa Libre
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="prospectmagazine.co.uk/"> Prospect Magazine
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="providencejournal.com/"> Providence Journal
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.quora.com/"> Quora
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="*.quartz.com/"> Quartz
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="qz.com/"> Quartz (qz.com)
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="qzprodquintqf7d8mnq.wpengine.netdna-cdn.com/"> Quartz (qz.com) (qzprodquintqf7d8mnq.wpengine.netdna-cdn.com)
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="raju.com/"> Raju
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="rawstory.com/"> Raw Story
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="readersupportednews.org/"> Reader Supported News
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="realclearpolitics.com/"> Real Clear Politics
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="reason.com/"> Reason
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" name="site-checkbox" value="richmond.com/"> Richmond Times-Dispatch
-                </label>
-            </li>
-            <li>
-                 </li>
+                <label>            
+               
+
+<input type="checkbox" name="site-checkbox" value="*adweek.com/">Adweek
+<input type="checkbox" name="site-checkbox" value="*.ambito.com/">Ámbito
+<input type="checkbox" name="site-checkbox" value="*.americanbanker.com/">American Banker
+<input type="checkbox" name="site-checkbox" value="*.baltimoresun.com/">Baltimore Sun
+<input type="checkbox" name="site-checkbox" value="*.barrons.com/">Barron's
+<input type="checkbox" name="site-checkbox" value="*.bloomberg.com/">Bloomberg
+<input type="checkbox" name="site-checkbox" value="*.bloombergquint.com/">Bloomberg Quint (free articles only)
+<input type="checkbox" name="site-checkbox" value="*.bostonglobe.com/">Boston Globe
+<input type="checkbox" name="site-checkbox" value="*.brisbanetimes.com.au/">Brisbane Times
+<input type="checkbox" name="site-checkbox" value="*.businessinsider.com/">Business Insider
+<input type="checkbox" name="site-checkbox" value="*.caixinglobal.com/">Caixin
+<input type="checkbox" name="site-checkbox" value="*.centralwesterndaily.com.au/">Central Western Daily
+<input type="checkbox" name="site-checkbox" value="cen.acs.org/">Chemical & Engineering News
+<input type="checkbox" name="site-checkbox" value="*.chicagotribune.com/">Chicago Tribune
+<input type="checkbox" name="site-checkbox" value="*.corriere.it/">Corriere Della Sera
+<input type="checkbox" name="site-checkbox" value="*.chicagobusiness.com/">Crain's Chicago Business
+<input type="checkbox" name="site-checkbox" value="*.dailypress.com/">Daily Press
+<input type="checkbox" name="site-checkbox" value="*.groene.nl/">De Groene Amsterdammer
+<input type="checkbox" name="site-checkbox" value="*.demorgen.be/">DeMorgen
+<input type="checkbox" name="site-checkbox" value="*.denverpost.com/">Denver Post
+<input type="checkbox" name="site-checkbox" value="speld.nl/">De Speld
+<input type="checkbox" name="site-checkbox" value="*.tijd.be/">De Tijd
+<input type="checkbox" name="site-checkbox" value="*.volkskrant.nl/">de Volkskrant
+<input type="checkbox" name="site-checkbox" value="*.df.cl/">Diario Financiero
+<input type="checkbox" name="site-checkbox" value="*.domani.it/">Domani
+<input type="checkbox" name="site-checkbox" value="*.dynamed.com/">Dynamed Plus
+<input type="checkbox" name="site-checkbox" value="*.elmercurio.com/">El Mercurio
+<input type="checkbox" name="site-checkbox" value="*.elmundo.es/">El Mundo
+<input type="checkbox" name="site-checkbox" value="elpais.com/">El Pais
+<input type="checkbox" name="site-checkbox" value="*.elperiodico.com/">El Periodico
+<input type="checkbox" name="site-checkbox" value="elu24.postimees.ee/">Elu24
+<input type="checkbox" name="site-checkbox" value="*.britannica.com/">Encyclopedia Britannica
+<input type="checkbox" name="site-checkbox" value="*.estadao.com.br/">Estadão
+<input type="checkbox" name="site-checkbox" value="*.washingtonexaminer.com/">Examiner
+<input type="checkbox" name="site-checkbox" value="*.expansion.com/">Expansión
+<input type="checkbox" name="site-checkbox" value="*.fnlondon.com/">Financial News
+<input type="checkbox" name="site-checkbox" value="*.financialpost.com/">Financial Post
+<input type="checkbox" name="site-checkbox" value="*.ft.com/">Financial Times
+<input type="checkbox" name="site-checkbox" value="*.firstthings.com/">First Things
+<input type="checkbox" name="site-checkbox" value="*.foreignpolicy.com/">Foreign Policy
+<input type="checkbox" name="site-checkbox" value="*.fortune.com/">Fortune
+<input type="checkbox" name="site-checkbox" value="*.genomeweb.com/">Genomeweb
+<input type="checkbox" name="site-checkbox" value="*.glassdoor.com/">Glassdoor
+<input type="checkbox" name="site-checkbox" value="*.globes.co.il/">Globes
+<input type="checkbox" name="site-checkbox" value="*.grubstreet.com/">Grubstreet
+<input type="checkbox" name="site-checkbox" value="*.haaretz.com/english/">Haaretz English
+<input type="checkbox" name="site-checkbox" value="*.haaretz.co.il/">Haaretz
+<input type="checkbox" name="site-checkbox" value="harpers.org/">Harper's Magazine
+<input type="checkbox" name="site-checkbox" value="*.courant.com/">Hartford Courant
+<input type="checkbox" name="site-checkbox" value="hbr.org/">Harvard Business Review
+<input type="checkbox" name="site-checkbox" value="hbrchina.cn/">Harvard Business Review China
+<input type="checkbox" name="site-checkbox" value="*.heraldsun.com.au/">Herald Sun
+<input type="checkbox" name="site-checkbox" value="fd.nl/">Het Financieele Dagblad
+<input type="checkbox" name="site-checkbox" value="*.historyextra.com/">History Extra
+<input type="checkbox" name="site-checkbox" value="*.humo.be/">Humo
+<input type="checkbox" name="site-checkbox" value="ilmanifesto.it/">Il Manifesto
+<input type="checkbox" name="site-checkbox" value="*.ilmessaggero.it/">Il Messaggero
+<input type="checkbox" name="site-checkbox" value="*.inc.com/">Inc.com
+<input type="checkbox" name="site-checkbox" value="interest.co.nz/">Interest NZ
+<input type="checkbox" name="site-checkbox" value="*.investorschronicle.co.uk/">Investors Chronicle
+<input type="checkbox" name="site-checkbox" value="*.lanacion.com.ar/">La Nacion
+<input type="checkbox" name="site-checkbox" value="*.repubblica.it/">La Repubblica
+<input type="checkbox" name="site-checkbox" value="*.lastampa.it/">La Stampa
+<input type="checkbox" name="site-checkbox" value="*.latercera.com/">La Tercera
+<input type="checkbox" name="site-checkbox" value="*.lavoixdunord.fr/">La Voix du Nord
+<input type="checkbox" name="site-checkbox" value="*.lecho.be/">L'Echo
+<input type="checkbox" name="site-checkbox" value="*.ledevoir.com/">Le Devoir
+<input type="checkbox" name="site-checkbox" value="*.leparisien.com/">Le Parisien
+<input type="checkbox" name="site-checkbox" value="*.lesechos.fr/">Les Echos
+<input type="checkbox" name="site-checkbox" value="*.loebclassics.com/">Loeb Classical Library
+<input type="checkbox" name="site-checkbox" value="*.lrb.co.uk/">London Review of Books
+<input type="checkbox" name="site-checkbox" value="labusinessjournal.com/">Los Angeles Business Journal
+<input type="checkbox" name="site-checkbox" value="*.latimes.com/">Los Angeles Times
+<input type="checkbox" name="site-checkbox" value="medium.com/">Medium
+<input type="checkbox" name="site-checkbox" value="*.medscape.com/">Medscape
+<input type="checkbox" name="site-checkbox" value="mexiconewsdaily.com/">Mexico News Daily
+<input type="checkbox" name="site-checkbox" value="sloanreview.mit.edu/">MIT Sloan Management Review
+<input type="checkbox" name="site-checkbox" value="*.technologyreview.com/">MIT Technology Review
+<input type="checkbox" name="site-checkbox" value="mv-voice.com/">Mountain View Voice
+<input type="checkbox" name="site-checkbox" value="nationalgeographic.com/">National Geographic
+<input type="checkbox" name="site-checkbox" value="nationalpost.com/">National Post
+<input type="checkbox" name="site-checkbox" value="nzz.ch/">Neue Zürcher Zeitung
+<input type="checkbox" name="site-checkbox" value="*.newstatesman.com/">New Statesman
+<input type="checkbox" name="site-checkbox" value="nzherald.co.nz/">New Zealand Herald
+<input type="checkbox" name="site-checkbox" value="nrc.nl/">NRC
+<input type="checkbox" name="site-checkbox" value="ntnews.com.au/">NT News
+<input type="checkbox" name="site-checkbox" value="ocregister.com/">Orange County Register
+<input type="checkbox" name="site-checkbox" value="orlandosentinel.com/">Orlando Sentinel
+<input type="checkbox" name="site-checkbox" value="paloaltoonline.com/">Palo Alto Online
+<input type="checkbox" name="site-checkbox" value="parool.nl/">Parool
+<input type="checkbox" name="site-checkbox" value="postimees.ee/">Postimees
+<input type="checkbox" name="site-checkbox" value="qz.com/">Quartz (free articles only)
+<input type="checkbox" name="site-checkbox" value="*.quora.com/">Quora
+<input type="checkbox" name="site-checkbox" value="*.quotidianigelocal.it/">Quotidiani Gelocal
+<input type="checkbox" name="site-checkbox" value="republic.ru/">Republic.ru
+<input type="checkbox" name="site-checkbox" value="*.reuters.com/">Reuters
+<input type="checkbox" name="site-checkbox" value="*.sandiegouniontribune.com/">San Diego Union Tribune
+<input type="checkbox" name="site-checkbox" value="*.sfchronicle.com/">San Francisco Chronicle
+<input type="checkbox" name="site-checkbox" value="*.scientificamerican.com/">Scientific American
+<input type="checkbox" name="site-checkbox" value="seekingalpha.com/">Seeking Alpha
+<input type="checkbox" name="site-checkbox" value="slate.com/">Slate
+<input type="checkbox" name="site-checkbox" value="sofrep.com/">SOFREP
+<input type="checkbox" name="site-checkbox" value="*.startribune.com/">Star Tribune
+<input type="checkbox" name="site-checkbox" value="*.statista.com/">Statista
+<input type="checkbox" name="site-checkbox" value="stuff.co.nz/">Stuff
+<input type="checkbox" name="site-checkbox" value="*.sueddeutsche.de/">Süddeutsche Zeitung
+<input type="checkbox" name="site-checkbox" value="scmp.com/">South China Morning Post
+<input type="checkbox" name="site-checkbox" value="sun-sentinel.com/">SunSentinel
+<input type="checkbox" name="site-checkbox" value="techinasia.com/">Tech in Asia
+<input type="checkbox" name="site-checkbox" value="telegraaf.nl/">Telegraaf
+<input type="checkbox" name="site-checkbox" value="time.com/">Time
+<input type="checkbox" name="site-checkbox" value="adelaidenow.com.au/">The Advertiser
+<input type="checkbox" name="site-checkbox" value="theadvocate.com.au/">The Advocate
+<input type="checkbox" name="site-checkbox" value="theage.com.au/">The Age
+<input type="checkbox" name="site-checkbox" value="theamericaninterest.com/">The American Interest
+<input type="checkbox" name="site-checkbox" value="theathletic.com/">The Athletic
+<input type="checkbox" name="site-checkbox" value="theathletic.co.uk/">The Athletic (UK)
+<input type="checkbox" name="site-checkbox" value="theatlantic.com/">The Atlantic
+<input type="checkbox" name="site-checkbox" value="afr.com/">The Australian Financial Review
+<input type="checkbox" name="site-checkbox" value="theaustralian.com.au/">The Australian
+<input type="checkbox" name="site-checkbox" value="bizjournals.com/">The Business Journals
+<input type="checkbox" name="site-checkbox" value="canberratimes.com.au/">The Canberra Times
+<input type="checkbox" name="site-checkbox" value="courier.com.au/">The Courier
+<input type="checkbox" name="site-checkbox" value="couriermail.com.au/">The Courier Mail
+<input type="checkbox" name="site-checkbox" value="thecut.com/">The Cut
+<input type="checkbox" name="site-checkbox" value="telegraph.co.uk/">The Daily Telegraph
+<input type="checkbox" name="site-checkbox" value="thediplomat.com/">The Diplomat
+<input type="checkbox" name="site-checkbox" value="economist.com/">The Economist
+<input type="checkbox" name="site-checkbox" value="theglobeandmail.com/">The Globe and Mail
+<input type="checkbox" name="site-checkbox" value="heraldsun.com.au/">The Herald
+<input type="checkbox" name="site-checkbox" value="thehindu.com/">The Hindu
+<input type="checkbox" name="site-checkbox" value="irishtimes.com/">The Irish Times (free articles only)
+<input type="checkbox" name="site-checkbox" value="japantimes.co.jp/">The Japan Times
+<input type="checkbox" name="site-checkbox" value="kansascity.com/">The Kansas City Star
+<input type="checkbox" name="site-checkbox" value="themarket.com/">TheMarker
+<input type="checkbox" name="site-checkbox" value="mercurynews.com/">The Mercury News
+<input type="checkbox" name="site-checkbox" value="themercury.com.au/">The Mercury Tasmania
+<input type="checkbox" name="site-checkbox" value="mcall.com/">The Morning Call
+<input type="checkbox" name="site-checkbox" value="thenation.com/">The Nation
+<input type="checkbox" name="site-checkbox" value="thenational.ae/">The National
+<input type="checkbox" name="site-checkbox" value="news-gazette.com/">The News-Gazette
+<input type="checkbox" name="site-checkbox" value="newyorker.com/">The New Yorker
+<input type="checkbox" name="site-checkbox" value="nytimes.com/">The New York Times
+<input type="checkbox" name="site-checkbox" value="theolivepress.es/">The Olive Press
+<input type="checkbox" name="site-checkbox" value="inquirer.com/">The Philadelphia Inquirer
+<input type="checkbox" name="site-checkbox" value="thesaturdaypaper.com.au/">The Saturday Paper
+<input type="checkbox" name="site-checkbox" value="seattletimes.com/">The Seattle Times
+<input type="checkbox" name="site-checkbox" value="spectator.com.au/">The Spectator Australia
+<input type="checkbox" name="site-checkbox" value="spectator.co.uk/">The Spectator (U.K.)
+<input type="checkbox" name="site-checkbox" value="spectator.us/">The Spectator (U.S.)
+<input type="checkbox" name="site-checkbox" value="smh.com.au/">The Sydney Morning Herald
+<input type="checkbox" name="site-checkbox" value="telegraph.co.uk/">The Telegraph
+<input type="checkbox" name="site-checkbox" value="thestar.com/">The Toronto Star
+<input type="checkbox" name="site-checkbox" value="wsj.com/">The Wall Street Journal
+<input type="checkbox" name="site-checkbox" value="washingtonpost.com/">The Washington Post
+<input type="checkbox" name="site-checkbox" value="thewrap.com/">The Wrap
+<input type="checkbox" name="site-checkbox" value="the-tls.co.uk/">Times Literary Supplement
+<input type="checkbox" name="site-checkbox" value="towardsdatascience.com/">Towards Data Science
+<input type="checkbox" name="site-checkbox" value="vanityfair.com/">Vanity Fair
+<input type="checkbox" name="site-checkbox" value="vn.nl/">Vrij Nederland
+<input type="checkbox" name="site-checkbox" value="vulture.com/">Vulture
+<input type="checkbox" name="site-checkbox" value="journalnow.com/">Winston-Salem Journal
+<input type="checkbox" name="site-checkbox" value="wired.com/">Wired
+<input type="checkbox" name="site-checkbox" value="zeit.de/">Zeit Online
+
+
+
+ </label>
+            </li>
+            
         </ul>
     </div>
-
 
 
 <form onsubmit="event.preventDefault(); onSubmit();">
